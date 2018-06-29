@@ -1,0 +1,178 @@
+.container {
+  margin: 200px auto;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+
+.cube {
+  top: 200px;
+  left: -50px;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  transform: perspective(900px) rotate3d(1, 1, 0, -45deg);
+  transition: all 1s ease;
+  transform-origin: 50% 50%;
+}
+
+.side {
+  width: 200px;
+  height: 200px;
+  box-shadow: -1px 1px 4px #31242442;
+  position: absolute;
+  display: inline-block;
+  opacity: 0.8;
+}
+
+.side-1 {
+  top: 0;
+  left: 0;
+  background: yellow;
+}
+
+.side-2 {
+  top: 0;
+  left: 100%;
+  background: orange;
+  transform-origin: left;
+  transform: rotate3d(0, 1, 0, 90deg);
+}
+
+.side-3 {
+  top: 100%;
+  left: 0;
+  background: green;
+  transform-origin: top;
+  transform: rotate3d(1, 0, 0, -90deg);
+}
+
+.side-4 {
+  top: 0;
+  right: 100%;
+  background: blue;
+  transform-origin: right;
+  transform: rotate3d(0, 1, 0, -90deg);
+}
+
+.side-5 {
+  bottom: 100%;
+  left: 0;
+  background: red;
+  transform-origin: 0 100%;
+  transform: rotate3d(1, 0, 0, 90deg);
+}
+
+.side-6 {
+  background: #79116f;
+  left: 0;
+  top: 0;
+  transform: translate3d(0, 0, -200px);
+}
+
+.dot {
+  position: absolute;
+  margin: -10px 0 0 -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.3);
+  opacity: 0.9
+}
+
+.d-50 {
+  top: 50%;
+  left: 50%;
+}
+
+.d-25-75 {
+  top: 25%;
+  left: 75%;
+}
+
+.d-75-25 {
+  top: 75%;
+  left: 25%;
+}
+
+.d-25-25 {
+  top: 25%;
+  left: 25%;
+}
+
+.d-75-75 {
+  top: 75%;
+  left: 75%;
+}
+
+.d-50-25 {
+  top: 50%;
+  left: 25%;
+}
+
+.d-50-75 {
+  top: 50%;
+  left: 75%;
+}
+
+/*  arrows */
+
+.arrow {
+  border: none;
+  position: absolute;
+  background: #1500ffa6;
+  transition: all 1s ease;
+}
+
+.arrow:hover {
+  position: absolute;
+  background: #1b00ffcf;
+}
+
+.a-top, .a-bottom {
+  left: 0;
+  right: 0;
+  min-width: 500px;
+  height: 50px;
+}
+
+.a-top {
+  top: 0;
+}
+
+.a-bottom {
+  bottom: 0;
+}
+
+.a-left, .a-right {
+  top: 0;
+  bottom: 0;
+  width: 50px;
+}
+
+.a-left {
+  left: 0;
+}
+
+.a-right {
+  right: 0;
+}
+
+.a-top:hover~.cube {
+  transform: perspective(900px) rotate3d(180, -45, 0, -135deg);
+}
+
+.a-bottom:hover~.cube {
+  transform: perspective(900px) rotate3d(180, -45, 0, 135deg);
+}
+.a-left:hover~.cube {
+  transform: perspective(900px) rotate3d(-45, 180, 0, 220deg);
+}
+
+.a-right:hover~.cube {
+  transform: perspective(900px) rotate3d(-45, 180, 0, 135deg);
+}
